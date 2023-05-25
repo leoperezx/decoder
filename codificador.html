@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+    <script>
+        const llaves={
+            "e":"enter",
+            "i":"imes",
+            "a":"ai",
+            "o":"ober",
+            "u":"ufat"
+        }
+
+        const removeAccents = (str) => {
+            // funcion para remover los acentos
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            }
+
+        function codificar(){
+            
+            texto_a_codificar = document.querySelector('#texto').value;
+            let parcial = removeAccents(texto_a_codificar.toLowerCase());
+            for (const [key,value] of Object.entries(llaves)){
+
+                parcial = parcial.replaceAll(key,value);
+            }
+            document.getElementById("codificado").innerHTML = parcial;
+        }
+
+      
+        function decodificar(){
+
+            texto_a_decodificar = document.querySelector('#codificado').value;
+            let parcial=removeAccents(texto_a_decodificar);
+            for (const [key,value] of Object.entries(llaves)){
+
+                parcial = parcial.replaceAll(value,key);
+                console.log(parcial)
+            }
+            document.getElementById("decodificado").textContent = parcial;
+        }
+
+    
+        function copiar(){
+            let text_copiado = document.querySelector('#codificado').value;
+            if (text_copiado != null) respuesta.innerHTML('Copiado!');
+            else respuesta.innerHTML('Incapaz de copiar!');
+        }
+
+       
+    </script>
+</head>
+
+<body>
+    <header></header>
+
+    <div class="wrapper">
+        <div class="box1">
+            <div class="texto">
+                <h2>Texto a codificar</h2>
+                <textarea id="texto" rows="10" cols="40" placeholder="Escribri texto"></textarea>
+                <h6>* Convierte las letras mayúsculas en minúsculas.</h6>
+                <h6>* Elimina los acentos que contenga el texto.</h6>
+            </div>
+        
+
+            <div class="botones">
+                <button class="codificar" onclick="codificar()"> Codificar </button>
+            </div>
+        </div>
+
+        <div class="box2">
+            <div class="codigo">
+                <h2>Texto codificado.</h2>
+                <textarea id="codificado"rows="10" cols="40"></textarea>
+            </div>
+
+            <div class="botones">
+                <button class="decodificar"onclick="decodificar()"> Decodificar </button>
+            </div>
+        </div>
+        
+        <div class="box3">
+            <div class="codigo">
+                <h2>Texto decodificado.</h2>
+                <textarea id="decodificado" rows="10" cols="40"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+</html>
