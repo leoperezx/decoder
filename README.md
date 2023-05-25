@@ -1,6 +1,5 @@
 # Alura Challenge
-
-
+Primero de 6 retos propuesto por Alura-Latam para superar la primera fase de la formación en el programa [Grupo 5 de Oracle Next Eduction (G5-ONE)](https://www.oracle.com/a/ocom/docs/ebook-one-manual-del-estudiante-lad.pdf).
 
 ### Descripción:
 Encriptar un texto de acuerdo a las siguientes claves:
