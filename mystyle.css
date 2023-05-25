@@ -50,22 +50,26 @@ table {
 
 /*  inicia el codigo para los estilos */
 
+body{
+    font-family: 'Inter', sans-serif;
+}
 
 header{
     height: 120px;
+    margin-bottom: 50px;
+    font-weight: bold;
 }
 h2{
     margin-bottom: 20px ;
+    font-weight: 400;
 }
 div.head{
-    font-family: 'Inter', sans-serif;
     font-size: 80px;
     color: #0a3871;
     font-weight: 400;
     padding: 20px 0px 0px 80px;
 }
 .wrapper{
-    font-family: 'Inter', sans-serif;
     font-weight: 200;
     font-size: 28px;
     margin: 0px 5%;
@@ -85,9 +89,14 @@ div.head{
     font-size: 12px;
     color: #979797;
 }
+
 textarea {
-    border: 1px solid #979797;
+    border: 3px solid #979797;
     border-radius: 10px;
+}
+textarea::placeholder{
+    color: #979797;
+    font-size: 18px;
 }
 button{
     font-size: 1em;
@@ -98,12 +107,25 @@ button{
 }
 .codificar{
     background-color: #0a3871;
-    font-weight: bold;
     color: #f3f5fc;
     margin-top: 30px;
 }
 .decodificar{
-    font-weight: bold;
     color: #0a3871;
     margin-top: 54px;
+}
+
+footer {
+    margin: 150px 6% 50px 6%;
+    padding: 20px 0px;
+    font-size: 1em;
+    color:#f3f5fc;
+    background-color: #0a3871;
+}
+
+footer a {
+    color:#f3f5fc;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 20px;
 }
